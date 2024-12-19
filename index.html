@@ -1,43 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App | With Vanilla JavaScript</title>
-
-    <link rel="stylesheet" href="style.css" /> 
-</head>
-<body>
-    <div class="card">
-        <div class="search">
-            <input type="text" placeholder="Enter City Name" spellcheck="true" >
-            <button>
-                <img src="images/search.png" alt="search" />
-            </button>
-        </div>
-
-        <div class="weather">
-            <img src="images/rain.png" class="weather-icon" alt="rain" />
-            <h1 class="temp">22°C</h1>
-            <h2 class="city">Lagos</h2>
-            <div class="details">
-                <div class="col">
-                    <img src="images/humidity.png" alt="humidity" />
-                    <div>
-                        <p class="humidity">50%</p>
-                        <p>Humidity</p>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <img src="images/wind.png" alt="wind" />
-                    <div>
-                        <p class="wind">15km/h</p>
-                        <p>Wind</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Weather App | TOP</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <h1>Weather App</h1>
+    <form id="weather-form">
+      <input type="text" id="location" placeholder="Enter location" required />
+      <button type="submit">Get Weather</button>
+    </form>
+    <button id="unit-toggle">°C/°F</button>
+    <div class="loading" id="loading">Loading...</div>
+    <div class="weather-info" id="weather-info">
+      <h2 id="city"></h2>
+      <p id="description"></p>
+      <p id="temperature"></p>
+      <p id="humidity"></p>
     </div>
-</body>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
 </html>
