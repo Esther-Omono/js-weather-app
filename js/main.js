@@ -1,7 +1,8 @@
 import { fetchWeather, processWeatherData } from './api.js';
-import { showLoading, hideLoading, displayWeatherInfo } from './dom.js';
+import { showLoading, hideLoading, displayWeatherInfo, toggleUnits } from './dom.js';
 
 const form = document.getElementById('weather-form');
+const toggleButton = document.querySelector('.toggleBtn');
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -19,3 +20,11 @@ form.addEventListener('submit', async (event) => {
     hideLoading();
   }
 });
+
+toggleButton.addEventListener('click', () => {
+    toggleUnits();
+    const location = document.getElementById('city').textContent;
+    if (location) {
+        form.dispatchEvent(new Event('submit'));
+    }
+})
