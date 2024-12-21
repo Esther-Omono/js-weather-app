@@ -17,7 +17,7 @@ export function processWeatherData(data) {
   return {
     city: data.name,
     description: data.weather[0].description,
-    temperature: data.main.temp,
+    temperature: Math.round(data.main.temp),
     humidity: data.main.humidity,
   };
 }

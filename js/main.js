@@ -1,5 +1,6 @@
 import { fetchWeather, processWeatherData } from './api.js';
 import { showLoading, hideLoading, displayWeatherInfo, toggleUnits } from './dom.js';
+import { updateTheme } from './theme.js';
 
 const form = document.getElementById('weather-form');
 const toggleButton = document.querySelector('.toggleBtn');
@@ -13,7 +14,9 @@ form.addEventListener('submit', async (event) => {
   try {
     const data = await fetchWeather(location);
     const weather = processWeatherData(data);
+
     displayWeatherInfo(weather);
+    updateTheme(weather.description);
   } catch (error) {
     alert(error.message);
   } finally {
